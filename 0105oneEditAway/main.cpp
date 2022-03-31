@@ -15,6 +15,7 @@ public:
 
 		bool bDiff = false;
 
+		// 两个字符串等长
 		if (first.length() == second.length())
 		{
 			for (int i = 0; i < first.length(); ++i)
@@ -30,6 +31,7 @@ public:
 			return true;
 		}
 
+		// 两个字符串长度差1
 		int i = 0;
 		int j = 0;
 		for (; i < first.length(); ++i, ++j)
