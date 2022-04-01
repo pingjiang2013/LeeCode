@@ -37,7 +37,7 @@ ListNode* SolutionPartition::partition(ListNode* head, int x) {
 }
 
 
-void printList(ListNode* head)
+void printListInPartition(ListNode* head)
 {
 	while (NULL != head)
 	{
@@ -49,33 +49,33 @@ void printList(ListNode* head)
 	return;
 }
 
-void addNode(ListNode* head, int n)
+void addNodeInPartition(ListNode* head, int n)
 {
 	ListNode* node = new ListNode(n);
 	node->next = head->next;
 	head->next = node;
 }
-void initList(ListNode* head)
+void initListInPartition(ListNode* head)
 {
-	addNode(head, 2);
-	addNode(head, 5);
-	addNode(head, 2);
-	addNode(head, 3);
-	addNode(head, 4);
-	addNode(head, 1);
+	addNodeInPartition(head, 2);
+	addNodeInPartition(head, 5);
+	addNodeInPartition(head, 2);
+	addNodeInPartition(head, 3);
+	addNodeInPartition(head, 4);
+	addNodeInPartition(head, 1);
 }
 
 int main()
 {
 	ListNode* head = new ListNode(0);
-	initList(head);
+	initListInPartition(head);
 
-	printList(head->next);
+	printListInPartition(head->next);
 
 	SolutionPartition s;
 	ListNode* ret = s.partition(head->next, 3);
 
-	printList(ret);
+	printListInPartition(ret);
 
 	return 0;
 }

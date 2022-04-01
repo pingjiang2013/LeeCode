@@ -32,7 +32,7 @@ void SolutionSetZeros::setZeroes(vector<vector<int>>& matrix) {
 	}
 }
 
-void printMatrix(vector<vector<int>>& matrix)
+void printMatrixInSetZeros(vector<vector<int>>& matrix)
 {
 	for (int i = 0; i < matrix.size(); ++i)
 	{
@@ -54,12 +54,12 @@ int main()
 		{15,14,12,16}
 	};
 
-	printMatrix(matrix);
+	printMatrixInSetZeros(matrix);
 
 	SolutionSetZeros s;
 	s.setZeroes(matrix);
 
-	printMatrix(matrix);
+	printMatrixInSetZeros(matrix);
 
 	return 0;
 }

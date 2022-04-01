@@ -42,7 +42,7 @@ ListNode* SolutionAddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2) {
 }
 
 
-void printList(ListNode* head)
+void printListInAddTwoNumbers(ListNode* head)
 {
 	while (NULL != head)
 	{
@@ -54,7 +54,7 @@ void printList(ListNode* head)
 	return;
 }
 
-void addNode(ListNode* head, int n)
+void addNodeInAddTwoNumbers(ListNode* head, int n)
 {
 	ListNode* node = new ListNode(n);
 	node->next = head->next;
@@ -63,16 +63,16 @@ void addNode(ListNode* head, int n)
 
 void initList1(ListNode* head)
 {
-	addNode(head, 6);
-	addNode(head, 1);
-	addNode(head, 7);
+	addNodeInAddTwoNumbers(head, 6);
+	addNodeInAddTwoNumbers(head, 1);
+	addNodeInAddTwoNumbers(head, 7);
 }
 
 void initList2(ListNode* head)
 {
-	addNode(head, 2);
-	addNode(head, 9);
-	addNode(head, 5);
+	addNodeInAddTwoNumbers(head, 2);
+	addNodeInAddTwoNumbers(head, 9);
+	addNodeInAddTwoNumbers(head, 5);
 }
 
 int main()
@@ -83,13 +83,13 @@ int main()
 	ListNode* l2 = new ListNode(0);
 	initList2(l2);
 
-	printList(l1->next);
-	printList(l2->next);
+	printListInAddTwoNumbers(l1->next);
+	printListInAddTwoNumbers(l2->next);
 
 	SolutionAddTwoNumbers s;
 	ListNode* ret = s.addTwoNumbers(l1->next, l2->next);
 
-	printList(ret);
+	printListInAddTwoNumbers(ret);
 
 	return 0;
 }

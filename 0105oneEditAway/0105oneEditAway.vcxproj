@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="oneEditAway.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="oneEditAway.h" />
