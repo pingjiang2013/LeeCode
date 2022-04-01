@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <vector>
 
+#include "rotate.h"
+
 /*
 [ 5,  1,  9, 11]
 [ 2,  4,  8, 10]
@@ -58,26 +60,23 @@ n = 5时，外层循环2次，交换两圈
 
 */
 
-using namespace std;
 
-class Solution {
-public:
-	void rotate(vector<vector<int>>& matrix) {
-		int n = matrix.size();
-		int temp = 0;
-		for (int i = 0; i < n / 2; ++i)
+void SolutionRotate::rotate(vector<vector<int>>& matrix) {
+	int n = matrix.size();
+	int temp = 0;
+	for (int i = 0; i < n / 2; ++i)
+	{
+		for (int j = i; j < n - i - 1; ++j)
 		{
-			for (int j = i; j < n - i - 1; ++j)
-			{
-				temp = matrix[i][j];
-				matrix[i][j] = matrix[n - j - 1][i];
-				matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
-				matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
-				matrix[j][n - i - 1] = temp;
-			}
+			temp = matrix[i][j];
+			matrix[i][j] = matrix[n - j - 1][i];
+			matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
+			matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
+			matrix[j][n - i - 1] = temp;
 		}
 	}
-};
+}
+
 
 void printMatrix(vector<vector<int>>& matrix)
 {
@@ -103,7 +102,7 @@ int main()
 
 	printMatrix(matrix);
 
-	Solution s;
+	SolutionRotate s;
 	s.rotate(matrix);
 
 	printMatrix(matrix);
