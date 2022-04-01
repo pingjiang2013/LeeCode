@@ -100,7 +100,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>..\0105oneEditAway\x64\Debug\*.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\0105oneEditAway\x64\Debug\*.obj;..\0107rotate\x64\Debug\*.obj;..\0108setZeros\x64\Debug\*.obj;..\0204partition\x64\Debug\*.obj;..\0205addTwoNumbers\x64\Debug\*.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
