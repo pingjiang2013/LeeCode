@@ -1,61 +1,41 @@
 #include <stdio.h>
-#include <vector>
+#include "partition.h"
 
-using namespace std;
+ListNode* SolutionPartition::partition(ListNode* head, int x) {
+	ListNode* first = new ListNode(0);
+	ListNode* previous = first;
+	first->next = head;
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
+	ListNode* current = head;
 
-struct ListNode 
-{
-	int val;
-	ListNode* next;
-	ListNode(int x) : val(x), next(NULL) {}
-};
+	while (NULL != current && current->val < x)
+	{
+		previous = current;
+		current = current->next;
+	}
+	if (NULL == current) return head;
 
-class Solution {
-public:
-	ListNode* partition(ListNode* head, int x) {
-		ListNode* first = new ListNode(0);
-		ListNode* previous = first;
-		first->next = head;
-
-		ListNode* current = head;
-
-		while (NULL != current && current->val < x)
+	while (NULL != current)
+	{
+		if (current->val < x)
+		{
+			previous->next = current->next;
+			current->next = first->next;
+			first->next = current;
+			current = previous->next;
+		}
+		else
 		{
 			previous = current;
 			current = current->next;
 		}
-		if (NULL == current) return head;
-
-		while (NULL != current)
-		{
-			if (current->val < x)
-			{
-				previous->next = current->next;
-				current->next = first->next;
-				first->next = current;
-				current = previous->next;
-			}
-			else
-			{
-				previous = current;
-				current = current->next;
-			}
-		}
-		ListNode* ret = first->next;
-		delete first;
-
-		return ret;
 	}
-};
+	ListNode* ret = first->next;
+	delete first;
+
+	return ret;
+}
+
 
 void printList(ListNode* head)
 {
@@ -92,7 +72,7 @@ int main()
 
 	printList(head->next);
 
-	Solution s;
+	SolutionPartition s;
 	ListNode* ret = s.partition(head->next, 3);
 
 	printList(ret);
