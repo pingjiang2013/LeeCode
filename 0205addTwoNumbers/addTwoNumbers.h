@@ -20,14 +20,7 @@ struct ListNode
 	ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode* addNodeToTail(ListNode* tail, int n)
-{
-	ListNode* node = new ListNode(n);
-	node->next = NULL;
-	tail->next = node;
-
-	return node;
-}
+ListNode* addNodeToTail(ListNode* tail, int n);
 
 class SolutionAddTwoNumbers {
 public:
