@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="setZeros.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="setZeros.h" />
