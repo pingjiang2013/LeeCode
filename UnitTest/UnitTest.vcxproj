@@ -100,7 +100,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>..\0105oneEditAway\x64\Debug\oneEditAway.obj;..\0107rotate\x64\Debug\rotate.obj;..\0108setZeros\x64\Debug\setZeros.obj;..\0204partition\x64\Debug\partition.obj;..\0205addTwoNumbers\x64\Debug\addTwoNumbers.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\0105oneEditAway\x64\Debug\oneEditAway.obj;..\0107rotate\x64\Debug\rotate.obj;..\0108setZeros\x64\Debug\setZeros.obj;..\0204partition\x64\Debug\partition.obj;..\0205addTwoNumbers\x64\Debug\addTwoNumbers.obj;..\0812solveNQueens\x64\Debug\solveNQueens.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -164,9 +164,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="UnitTest01.cpp" />
+    <ClCompile Include="UnitTest08.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\0105oneEditAway\0105oneEditAway.vcxproj">
@@ -183,6 +186,9 @@
     </ProjectReference>
     <ProjectReference Include="..\0205addTwoNumbers\0205addTwoNumbers.vcxproj">
       <Project>{6d3f5f13-afc0-4cc4-8cd2-72b3098d77f1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\0812solveNQueens\0812solveNQueens.vcxproj">
+      <Project>{4eb3f467-93ea-4ef3-a453-3c0b5ae08da1}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

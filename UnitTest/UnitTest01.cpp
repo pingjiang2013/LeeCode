@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include <stdarg.h>
+#include "utils.h"
+
 #include "../0105oneEditAway/oneEditAway.h"
 #include "../0107rotate/rotate.h"
 
@@ -8,26 +9,9 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest01
 {
-	const int MAX_LENGTH = 256;
-	const std::string DIVIDING_LINE = "*******************************************";
-
 	TEST_CLASS(UnitTest01)
 	{
 	public:
-		void printInUnitTest(const char* fmt, ...)
-		{
-			va_list va;
-			va_start(va, fmt);
-			impPrintInUnitTest(fmt, va);
-			va_end(va);
-		}
-
-		void impPrintInUnitTest(const char* fmt, va_list va)
-		{
-			char buf[MAX_LENGTH];
-			vsnprintf(buf, MAX_LENGTH, fmt, va);
-			Logger::WriteMessage(buf);
-		}
 		TEST_METHOD(TestMethod0105)
 		{
 			SolutionOneEditAway s;
